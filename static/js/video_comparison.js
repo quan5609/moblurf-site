@@ -163,6 +163,22 @@ function changeVideo_stereo_nvs(novelviewSrc, scene) {
   selectedButton.classList.add("button-20-selected");
 }
 
+function changeImage_quantitative(imagePath, scene) {
+  const img = document.getElementById("stereo_img");
+  img.src = imagePath;
+
+  const buttons = document.querySelectorAll(".image-select .button-20");
+  buttons.forEach(function (button) {
+    button.classList.remove("button-20-selected");
+  });
+
+  const selectedButton = document.getElementById("btn_" + scene);
+  if (selectedButton) {
+    selectedButton.classList.add("button-20-selected");
+  }
+}
+
+
 function initVideo_stereo_nvs() {
   if (videoInitialized_stereo_nvs === true) {
     return;
